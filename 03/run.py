@@ -18,14 +18,10 @@ for line in lines:
     # Part I:
     word1 = line[0:len(line.strip())//2]
     word2 = line[len(line.strip())//2:len(line.strip())]
+
     for x in word1:
-        for y in word2:
-            if x == y:
-                match_found = True
-                match_cases.append(x)
-                break
-        if match_found:
-            match_found = False
+        if x in list(word2):
+            match_cases.append(x)
             break
 
     # Part II:
@@ -34,16 +30,14 @@ for line in lines:
         group.append(line.strip())
     if i == 3:
         for x in group[0]:
-            for y in group[1]:
-                if x == y:
-                    group_match.append(x)
+            if x in list(group[1]):
+                group_match.append(x)
         for x in group[2]:
             if x in group_match:
                 group_priorities.append(x)
                 i = 0
                 group=[]
                 group_match=[]
-
                 
 # Priority list:
 
