@@ -7,7 +7,6 @@ range1=[]
 range2=[]
 sum = 0
 sum2 = 0
-i = 0
 
 for line in lines:
     sections=line.strip().split(",")
